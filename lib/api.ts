@@ -1,10 +1,24 @@
 /* eslint-disable prettier/prettier */
 import axios from 'axios';
-const baseUrl =
-  'https://api.open-meteo.com/v1/forecast?latitude=22.3223441&longitude=114.167752&current=temperature_2m&tim';
+const baseUrl = 'https://api.open-meteo.com/v1/forecast?';
 
-const getWeather = async () => {
-  const request = await axios.get(baseUrl);
+type WeatherParams = {
+  latitude: string;
+  longitude: string;
+};
+
+const getWeather = async (weatherParams: WeatherParams) => {
+  console.log('HI', weatherParams);
+  const request = await axios.get(
+    baseUrl +
+      new URLSearchParams({
+        latitude: weatherParams.latitude,
+        longitude: weatherParams.longitude,
+        current: 'temperature_2m',
+        timezone: 'auto',
+      }),
+  );
+
   return request.data;
 };
 
