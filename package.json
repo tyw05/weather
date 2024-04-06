@@ -11,8 +11,11 @@
   },
   "dependencies": {
     "axios": "^1.6.8",
+    "lottie-react-native": "^6.7.0",
     "react": "18.2.0",
     "react-native": "0.73.6",
+    "react-native-element-dropdown": "^2.10.4",
+    "react-native-linear-gradient": "^2.8.3",
     "react-native-vector-icons": "^10.0.3"
   },
   "devDependencies": {
